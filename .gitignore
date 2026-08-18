@@ -1,5 +1,6 @@
 node_modules/
-lib/
+# lib/ is committed on purpose: a github: install must not depend
+# on npm running the prepare script (npm >= 12 blocks it by default).
 *.tgz
 .env
 .DS_Store
