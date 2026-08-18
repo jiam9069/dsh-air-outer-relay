@@ -33,7 +33,6 @@
     "src",
     "scripts",
     "tsconfig.json",
-    "cordis.patch.yml",
     "README.md",
     "LICENSE"
   ],
@@ -42,11 +41,6 @@
     "prepare": "node scripts/prepare.mjs",
     "test": "npm run build && node --test tests/*.test.mjs",
     "pack:check": "npm pack --dry-run"
-  },
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    }
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
