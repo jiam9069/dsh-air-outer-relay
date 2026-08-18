@@ -33,6 +33,7 @@
     "src",
     "scripts",
     "tsconfig.json",
+    "cordis.patch.yml",
     "README.md",
     "LICENSE"
   ],
@@ -55,5 +56,10 @@
   },
   "dependencies": {
     "typescript": "^5.7.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
   }
 }

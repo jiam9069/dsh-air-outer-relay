@@ -1,0 +1,7 @@
+# dsh bundle patch: inserts this plugin into a profile's layer stack.
+# Only this plugin's own row belongs here; restating a row that another bundle
+# already declares (for example `storage`) makes the loader reject the profile
+# with "duplicate loader entry id".
+- insert:
+    - id: air-outer-relay
+      name: dsh-air-outer-relay
