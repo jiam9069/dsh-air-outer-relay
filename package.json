@@ -3,23 +3,51 @@
   "version": "0.1.0",
   "description": "DSH Cordis plugin that runs an Air Outer compatibility relay with automatic Claude/Codex client fingerprint probing.",
   "license": "MIT",
-  "keywords": ["dsh", "deepseek-harness", "cordis", "air-outer", "llm", "relay"],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "air-outer",
+    "llm",
+    "relay"
+  ],
   "type": "module",
-  "engines": { "node": ">=22.0.0" },
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "exports": {
-    ".": { "types": "./lib/index.d.ts", "default": "./lib/index.js" },
-    "./relay": { "types": "./lib/relay.d.ts", "default": "./lib/relay.js" },
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./relay": {
+      "types": "./lib/relay.d.ts",
+      "default": "./lib/relay.js"
+    },
     "./package.json": "./package.json"
   },
-  "files": ["lib", "src", "cordis.patch.yml", "README.md", "LICENSE"],
+  "files": [
+    "lib",
+    "src",
+    "scripts",
+    "tsconfig.json",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "prepare": "node scripts/prepare.mjs",
     "test": "npm run build && node --test tests/*.test.mjs",
     "pack:check": "npm pack --dry-run"
   },
-  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
     "@deepseek-ai/dsh-settings": "^0.1.0-rc.7",
@@ -29,7 +57,9 @@
     "@deepseek-ai/cordis": "^4.0.1",
     "@deepseek-ai/dsh-settings": "^0.1.0-rc.7",
     "@deepseek-ai/schemastery": "^3.18.1",
-    "@types/node": "^22.0.0",
+    "@types/node": "^22.0.0"
+  },
+  "dependencies": {
     "typescript": "^5.7.0"
   }
 }
